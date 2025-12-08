@@ -7,7 +7,7 @@ SRCS = ft_printf.c \
 	ft_putchar.c \
 	ft_putnbr.c \
 	ft_putnbr_hex.c \
-	ft_putstr.c
+	ft_putstr.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,35 +6,28 @@
 /*   By: eturini <eturini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 18:01:58 by eturini           #+#    #+#             */
-/*   Updated: 2025/12/06 18:32:14 by eturini          ###   ########.fr       */
+/*   Updated: 2025/12/08 16:48:18 by eturini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hex(int nbr, int is_up, int *count)
+int	ft_putnbr_ptr(unsigned long long nbr, char *base, int *count, int prefix)
 {
-	int			count_base;
-	long int	numb;
-	char		*base;
+	if (nbr == 0 && prefix == 1)
+		return (ft_putstr("(nil)", count));
+	if (prefix == 1)
+		ft_putstr("0x", count);
+	if (nbr >= 16)
+		ft_putnbr_ptr((nbr / (16)), base, count, 0);
+	ft_putchar(base[(nbr % 16)], count);
+	return (TRUE);
+}
 
-	if (is_up == TRUE)
-		base = ft_calloc(TRUE);
-	else
-		base = ft_calloc(FALSE);
-	numb = nbr;
-	count_base = 0;
-	while (base[count_base] != '\0')
-		count_base++;
-	if (numb < 0)
-	{
-		write(1, "-", 1);
-		(*count)++;
-		numb = numb * (-1);
-	}
-	if (numb >= 16)
-		ft_putnbr_hex((numb / (16)), is_up, count);
-	write(1, &base[(numb % 16)], 1);
-	(*count)++;
+int	ft_putnbr_hex(unsigned int nbr, char *base, int *count)
+{
+	if (nbr >= 16)
+		ft_putnbr_hex((nbr / (16)), base, count);
+	ft_putchar(base[(nbr % 16)], count);
 	return (TRUE);
 }
