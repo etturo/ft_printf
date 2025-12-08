@@ -6,13 +6,11 @@
 /*   By: eturini <eturini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 17:36:24 by eturini           #+#    #+#             */
-/*   Updated: 2025/12/08 17:07:39 by eturini          ###   ########.fr       */
+/*   Updated: 2025/12/08 17:20:58 by eturini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#define HEX_LOW "0123456789abcdef"
-#define HEX_UP "0123456789ABCDEF"
 
 int	handle_format(char *s, va_list argptr, int *count)
 {

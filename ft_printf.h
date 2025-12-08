@@ -6,7 +6,7 @@
 /*   By: eturini <eturini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 14:38:49 by eturini           #+#    #+#             */
-/*   Updated: 2025/12/08 16:48:01 by eturini          ###   ########.fr       */
+/*   Updated: 2025/12/08 17:21:12 by eturini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define TRUE 1
 # define FALSE 0
+# define HEX_LOW "0123456789abcdef"
+# define HEX_UP "0123456789ABCDEF"
 
 int	ft_printf(const char *format, ...);
 int	handle_format(char *s, va_list argptr, int *count);
